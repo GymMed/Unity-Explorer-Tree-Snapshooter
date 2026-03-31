@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <OutputType>Library</OutputType>
+        <LangVersion>9.0</LangVersion>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+        <DebugType>None</DebugType>
+        <OutputPath>..\Release\</OutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+    <PackageReference Include="BepInEx.BaseLib" Version="5.4.16" />
+        <PackageReference Include="HarmonyX" Version="2.5.7" />
+
+      <Reference Include="UnityExplorer">
+        <HintPath>Libraries\UnityExplorer.BIE5.Mono.dll</HintPath>
+      </Reference>
+      <Reference Include="UniverseLib">
+        <HintPath>Libraries\UniverseLib.Mono.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine">
+          <HintPath>Libraries\UnityEngine_publicized.dll</HintPath>
+          <Private>False</Private>
+      </Reference>
+      <Reference Include="UnityEngine.UI">
+          <HintPath>Libraries\UnityEngine.UI_publicized.dll</HintPath>
+          <Private>False</Private>
+      </Reference>
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="call &quot;$(ProjectDir)..\Public\DontZip\placeBuild.bat&quot;" />
+    </Target>
+</Project>
