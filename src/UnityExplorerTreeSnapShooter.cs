@@ -13,7 +13,7 @@ namespace UnityExplorerTreeSnapShooter
     {
         public const string GUID = "gymmed.unity_tree_snap_shooter";
         public const string NAME = "Unity Tree Snap Shooter";
-        public const string VERSION = "0.0.1";
+        public const string VERSION = "0.0.2";
 
         public static readonly string Prefix = "[Unity-Tree-Snap-Shooter]";
         public const string EVENTS_LISTENER_GUID = GUID + "_*";
